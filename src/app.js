@@ -4,6 +4,8 @@ const app = express()
 const path = require('path');
 const port = 3000
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.engine('hbs', handlebars.engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
